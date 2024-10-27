@@ -1,0 +1,50 @@
+echo "Running tests..."
+echo
+
+make
+
+if [ $? -eq 0 ] ; then
+  echo "Pass: Program compiled"
+else
+  echo "Fail: Program did not compile"
+  exit 1
+fi
+
+./parser ./tests/shscards.csv
+
+if [ $? -eq 0 ] ; then
+  echo "Pass: ./parser exited zero"
+else
+  echo "Fail: ./parser did not exit zero"
+  exit 1
+fi
+
+stdbuf -o0 ./search < ./tests/sinput.txt > TESTOUT 2>&1
+
+if [ $? -eq 0 ] ; then
+  echo "Pass: ./search exited zero"
+else
+  echo "Fail: ./search did not exit zero"
+  rm TESTOUT
+  exit 1
+fi
+
+diff TESTOUT ./tests/sinput.txt.out > DIFFOUT
+
+if [ $? -eq 0 ] ; then
+  echo "Pass: ./search output is correct"
+else
+  echo "Fail: ./search output is not correct"
+  cat DIFFOUT
+  rm TESTOUT
+  rm DIFFOUT
+  exit 1
+fi
+
+echo
+echo "All tests passed."
+
+rm TESTOUT
+rm DIFFOUT
+exit 0
+

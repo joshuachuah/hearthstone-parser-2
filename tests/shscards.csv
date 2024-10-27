@@ -1,0 +1,11 @@
+id,name,cost,text,attack,health,type,class,rarity
+38522,"Eldritch Horror",8,,6,10,"MINION","NEUTRAL","COMMON"
+64900,"The Demon Seed",1,"<b>Questline:</b> Take 8\ndamage on your turns.\n<b>Reward:</b> <b>Lifesteal</b>. Deal $3\ndamage to the enemy hero.",,,"SPELL","WARLOCK","LEGENDARY"
+69713,"Nerubian Egg",2,"<b>Deathrattle:</b> Summon a 4/4 Nerubian.",0,2,"MINION","NEUTRAL","RARE"
+1786,"Nerubian Egg",2,"<b>Deathrattle:</b> Summon a 4/4 Nerubian.",0,2,"MINION","NEUTRAL","RARE"
+69909,"Ice Barrier",3,"<b>Secret:</b> As soon as your\nhero is attacked, gain\n8 Armor.",,,"SPELL","MAGE","COMMON"
+69608,"Ice Barrier",3,"<b>Secret:</b> When your\nhero is attacked,\ngain 8 Armor.",,,"SPELL","MAGE","COMMON"
+621,"Ice Barrier",3,"<b>Secret:</b> When your\nhero is attacked,\ngain 8 Armor.",,,"SPELL","MAGE","COMMON"
+50088,"Jan'alai, the Dragonhawk",7,"<b>Battlecry:</b> If your Hero Power\ndealt 8 damage this game,\nsummon Ragnaros the\nFirelord.",4,4,"MINION","MAGE","LEGENDARY"
+469,"Blood Imp",1,"  <b>Stealth</b>. At the end of your  \nturn, give another random\n friendly minion +1 Health.",0,1,"MINION","WARLOCK","COMMON"
+69751,"Blood Imp",1,"  <b>Stealth</b>. At the end of your  \nturn, give another random\n friendly minion +1 Health.",0,1,"MINION","WARLOCK","COMMON"

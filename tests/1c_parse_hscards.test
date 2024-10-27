@@ -1,0 +1,53 @@
+echo "Running tests..."
+echo
+
+make
+
+if [ $? -eq 0 ] ; then
+  echo "Pass: Program compiled"
+else
+  echo "Fail: Program did not compile"
+  exit 1
+fi
+
+./parser ./tests/hscards.csv
+
+if [ $? -eq 0 ] ; then
+  echo "Pass: Program exited zero"
+else
+  echo "Fail: Program did not exit zero"
+  exit 1
+fi
+
+cd tests
+make
+cd ..
+
+diff -y <(./tests/hexdump index.bin) <(./tests/hexdump ./tests/index.bin.out) > DIFFOUT
+
+if [ $? -eq 0 ] ; then
+  echo "Pass: index.bin is correct"
+else
+  echo "Fail: index.bin is not correct"
+  cat DIFFOUT
+  rm DIFFOUT
+  exit 1
+fi
+
+diff -y <(./tests/hexdump cards.bin) <(./tests/hexdump ./tests/cards.bin.out) > DIFFOUT
+
+if [ $? -eq 0 ] ; then
+  echo "Pass: cards.bin is correct"
+else
+  echo "Fail: cards.bin is not correct"
+  cat DIFFOUT
+  rm DIFFOUT
+  exit 1
+fi
+
+echo
+echo "All tests passed."
+
+rm DIFFOUT
+exit 0
+
